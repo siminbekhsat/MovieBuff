@@ -5,4 +5,5 @@ import com.cna.mobileprogramming.movieBuff.service.RetrofitService
 class MainRepository constructor(private val retrofitService: RetrofitService) {
 
     suspend fun getAllMovies() = retrofitService.getAllMovies()
+    suspend fun getHighRatedMovies() = retrofitService.getHighRatedMovies()
 }

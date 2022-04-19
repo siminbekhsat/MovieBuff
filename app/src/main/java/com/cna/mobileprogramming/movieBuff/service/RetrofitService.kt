@@ -10,6 +10,7 @@ interface RetrofitService {
 
     @GET("movielist.json")
     suspend fun getAllMovies() : Response<List<Movie>>
+    abstract fun getHighRatedMovies(): Any
 
     companion object {
         var retrofitService: RetrofitService? = null

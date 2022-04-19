@@ -10,6 +10,7 @@ class MainViewModel constructor(private val mainRepository: MainRepository) : Vi
 
     val errorMessage = MutableLiveData<String>()
     val movieList = MutableLiveData<List<Movie>>()
+    val ratedList = MutableLiveData<List<Movie>>()
     var job: Job? = null
     val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         onError("Exception handled: ${throwable.localizedMessage}")
@@ -28,6 +29,27 @@ class MainViewModel constructor(private val mainRepository: MainRepository) : Vi
                 }
             }
         }
+
+    }
+
+
+    fun getHighRatedMovies() {
+        /*job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
+            val response = mainRepository.getHighRatedMovies()
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
+                    for (item in response.body()!!){
+                        if (item.category == "High Rated"){
+                        ratedList.add(item)
+            }
+        }
+        ratedList.postValue(list)
+                } else {
+                    onError("Error : ${response.message()} ")
+                }
+            }
+        }*/
+
 
     }
 
