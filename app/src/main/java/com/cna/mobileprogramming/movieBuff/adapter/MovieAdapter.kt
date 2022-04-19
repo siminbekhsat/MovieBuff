@@ -1,13 +1,11 @@
 package com.cna.mobileprogramming.movieBuff.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cna.mobileprogramming.foodie.databinding.AdapterMovieBinding
 import com.cna.mobileprogramming.movieBuff.model.Movie
-import com.cna.mobileprogramming.movieBuff.ui.MovieDetailsActivity
 import com.cna.mobileprogramming.movieBuff.util.ValidationUtil
 
 class MovieAdapter : RecyclerView.Adapter<MainViewHolder>() {
@@ -32,11 +30,6 @@ class MovieAdapter : RecyclerView.Adapter<MainViewHolder>() {
         if (ValidationUtil.validateMovie(movie)) {
             holder.binding.name.text = movie.name
             Glide.with(holder.itemView.context).load(movie.imageUrl).into(holder.binding.imageview)
-        }
-        holder.itemView.setOnClickListener {
-           // Toast.makeText(holder.itemView.context, "clicked", Toast.LENGTH_SHORT).show()
-            val intent = Intent(holder.itemView.context, MovieDetailsActivity::class.java)
-            holder.itemView.context.startActivity(intent)
         }
     }
 
