@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cna.mobileprogramming.foodie">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,12 +14,16 @@
         android:theme="@style/Theme.Foodie">
         <activity
             android:name="com.cna.mobileprogramming.movieBuff.ui.MainActivity"
+            >
+        </activity>
+        <activity
+            android:name="com.cna.mobileprogramming.movieBuff.ui.LandingActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
